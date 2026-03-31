@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./Todo.Api
+    image: ${BACKEND_IMAGE:-todo-api-example}
+    environment:
+      ASPNETCORE_URLS: http://+:3087
+    ports:
+      - "3087:3087"
+
+  frontend:
+    build:
+      context: .
+      args:
+        VITE_API_BASE_URL: http://backend:3087
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  cypress:
+    build:
+      context: .
+      dockerfile: cypress.Dockerfile
+    environment:
+      CYPRESS_baseUrl: http://frontend
+      CYPRESS_API_BASE_URL: http://backend:3087
+    depends_on:
+      - frontend
+    volumes:
+      - ./cypress/results:/e2e/cypress/results

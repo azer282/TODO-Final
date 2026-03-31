@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "totals": {
+    "major": 60,
+    "advanced": 30,
+    "containerizationReserved": 10,
+    "bonusRedis": 10,
+    "bonusRabbitMQ": 10,
+    "max": 120
+  },
+  "categories": [
+    {
+      "name": "Authentication & user isolation",
+      "points": 15,
+      "bucket": "major",
+      "tests": [
+        {
+          "title": "Auth - register works"
+        },
+        {
+          "title": "Auth - login works"
+        },
+        {
+          "title": "Auth - user cannot access another user's todo"
+        }
+      ]
+    },
+    {
+      "name": "Guest public todos",
+      "points": 5,
+      "bucket": "major",
+      "tests": [
+        {
+          "title": "Public - can view public todos without login"
+        }
+      ]
+    },
+    {
+      "name": "Basic CRUD + completion + validation",
+      "points": 40,
+      "bucket": "major",
+      "tests": [
+        {
+          "title": "CRUD - create todo via UI"
+        },
+        {
+          "title": "CRUD - update todo via UI"
+        },
+        {
+          "title": "CRUD - toggle completed/uncompleted"
+        },
+        {
+          "title": "CRUD - delete todo via UI"
+        },
+        {
+          "title": "Validation - rejects invalid todo title"
+        }
+      ]
+    },
+    {
+      "name": "Pagination",
+      "points": 10,
+      "bucket": "advanced",
+      "tests": [
+        {
+          "title": "Pagination - list shows multiple pages when many todos exist"
+        },
+        {
+          "title": "Pagination - navigating pages changes visible items"
+        }
+      ]
+    },
+    {
+      "name": "Filtering",
+      "points": 8,
+      "bucket": "advanced",
+      "tests": [
+        {
+          "title": "Filtering - status filter returns only completed"
+        },
+        {
+          "title": "Filtering - priority filter returns only high"
+        }
+      ]
+    },
+    {
+      "name": "Sorting",
+      "points": 6,
+      "bucket": "advanced",
+      "tests": [
+        {
+          "title": "Sorting - dueDate ascending sorts correctly"
+        },
+        {
+          "title": "Sorting - title ascending sorts correctly"
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "points": 6,
+      "bucket": "advanced",
+      "tests": [
+        {
+          "title": "Search - keyword matches title/details"
+        },
+        {
+          "title": "Search - keyword excludes non-matching items"
+        }
+      ]
+    }
+  ]
+}

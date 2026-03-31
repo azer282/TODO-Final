@@ -1,0 +1,8 @@
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "3087:3087"
+    environment:
+      ASPNETCORE_URLS: http://+:3087
