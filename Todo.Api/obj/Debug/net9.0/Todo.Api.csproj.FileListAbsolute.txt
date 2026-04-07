@@ -68,3 +68,5 @@ C:\Users\augus\Desktop\PROJETV1\Todo.Api\obj\Debug\net9.0\refint\Todo.Api.dll
 C:\Users\augus\Desktop\PROJETV1\Todo.Api\obj\Debug\net9.0\Todo.Api.pdb
 C:\Users\augus\Desktop\PROJETV1\Todo.Api\obj\Debug\net9.0\Todo.Api.genruntimeconfig.cache
 C:\Users\augus\Desktop\PROJETV1\Todo.Api\obj\Debug\net9.0\ref\Todo.Api.dll
+C:\Users\augus\Desktop\PROJETV1\Todo.Api\bin\Debug\net9.0\App_Data\store.json
+C:\Users\augus\Desktop\PROJETV1\Todo.Api\obj\Debug\net9.0\Todo.Api.sourcelink.json

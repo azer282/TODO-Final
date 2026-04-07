@@ -1,13 +1,25 @@
 import axios from "axios";
 
 export const getApiBaseUrl = () => {
-  // Vite env: VITE_API_BASE_URL
-  return import.meta.env.VITE_API_BASE_URL || "http://localhost:3087";
+  const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3087";
+  const normalizedBaseUrl = rawBaseUrl.replace(/\/+$/, "");
+
+  // Calls in the app already start with /api/... so if the configured base
+  // also ends with /api we strip it to avoid generating /api/api/...
+  if (normalizedBaseUrl === "/api") {
+    return "";
+  }
+
+  if (normalizedBaseUrl.endsWith("/api")) {
+    return normalizedBaseUrl.slice(0, -4);
+  }
+
+  return normalizedBaseUrl;
 };
 
 export const api = axios.create({
   baseURL: getApiBaseUrl(),
-  headers: { 
+  headers: {
     "Accept": "*/*",
     "Content-Type": "application/json",
   }

@@ -12,7 +12,7 @@ services:
     build:
       context: .
       args:
-        VITE_API_BASE_URL: http://backend:3087
+        VITE_API_BASE_URL: /api
     ports:
       - "3000:80"
     depends_on:
